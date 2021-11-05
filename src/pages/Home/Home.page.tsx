@@ -1,0 +1,27 @@
+import { Icon } from '@iconify/react';
+import styles from './home.module.scss';
+import { TextButton } from '../../components/TextButton';
+
+export function Home() {
+  return (
+    <>
+      <nav className={styles.nav}>
+        <ul>
+          <li>Sign in</li>
+          <li>Report a bug</li>
+          <li>About</li>
+        </ul>
+      </nav>
+      <main className={styles.main}>
+        <Icon icon='bi:shield-lock' />
+        <h1>The Secret Store</h1>
+        <p>
+          <TextButton link='/signup'>
+            Create an account{' '}
+            <Icon icon='akar-icons:arrow-right' className={styles.arrow} />
+          </TextButton>
+        </p>
+      </main>
+    </>
+  );
+}

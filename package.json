@@ -8,6 +8,7 @@
     "format": "prettier --write **/*.{ts,tsx,html,css,scss}"
   },
   "dependencies": {
+    "@iconify/react": "^3.0.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },

@@ -1,0 +1,48 @@
+.nav {
+  padding: 2.8rem;
+  max-width: 100rem;
+  min-width: 90%;
+  margin: 0 auto;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-right: 3.6rem;
+    }
+  }
+}
+
+.main {
+  & {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    place-content: center;
+  }
+
+  color: var(--color-lavender);
+
+  svg {
+    font-size: 12rem;
+    margin-bottom: 1.4rem;
+  }
+
+  h1 {
+    font-weight: 200;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    color: var(--color-white);
+  }
+
+  .arrow {
+    font-size: 1.2em;
+    margin-bottom: -0.3rem;
+  }
+}

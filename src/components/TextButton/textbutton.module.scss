@@ -1,0 +1,13 @@
+.text_button {
+  color: inherit;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+
+  *,
+  svg {
+    font-size: inherit;
+    margin-bottom: 0;
+  }
+}

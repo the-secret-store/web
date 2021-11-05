@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+import { Home } from './pages/Home';
 import './root/styles/root.scss';
 
 ReactDOM.render(
   <StrictMode>
-    <h1>Hello</h1>
+    <Home />
   </StrictMode>,
   document.getElementById('root')
 );
