@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <h1>Hello</h1>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </StrictMode>,
+  document.getElementById('root')
 );

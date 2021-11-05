@@ -1,10 +1,11 @@
 {
-  "name": "web",
-  "version": "0.0.0",
+  "name": "the-secret-store-web",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "format": "prettier --write **/*.{ts,tsx,html,css,scss}"
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -14,6 +15,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react": "^1.0.0",
+    "prettier": "^2.4.1",
     "sass": "^1.43.4",
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
