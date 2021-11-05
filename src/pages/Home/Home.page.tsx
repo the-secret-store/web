@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import styles from './home.module.scss';
-import { TextButton } from '../../components/TextButton';
+import { TextButton } from '../../components';
 
 export function Home() {
   return (

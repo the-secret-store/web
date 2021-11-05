@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { Home } from './pages/Home';
+import { Home } from './pages';
 import './root/styles/root.scss';
 
 ReactDOM.render(
