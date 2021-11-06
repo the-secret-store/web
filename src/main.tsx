@@ -1,11 +1,13 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Home } from './pages';
-import './root/styles/root.scss';
+import { ThemeEngine } from './root/ThemeEngine/ThemeEngine';
 
 ReactDOM.render(
   <StrictMode>
-    <Home />
+    <ThemeEngine>
+      <Home />
+    </ThemeEngine>
   </StrictMode>,
   document.getElementById('root')
 );
