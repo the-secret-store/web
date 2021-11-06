@@ -1,12 +1,12 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { Home } from './pages';
+import { Router } from './root/Router';
 import { ThemeEngine } from './root/ThemeEngine/ThemeEngine';
 
 ReactDOM.render(
   <StrictMode>
     <ThemeEngine>
-      <Home />
+      <Router />
     </ThemeEngine>
   </StrictMode>,
   document.getElementById('root')
