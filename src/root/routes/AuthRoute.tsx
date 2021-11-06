@@ -1,13 +1,18 @@
-import React from 'react';
 import { Navigate, Route } from 'react-router-dom';
 
 export function AuthRoute({
   element: Component,
+  path,
   ...rest
 }: {
-  element: React.ComponentType;
+  element: any;
+  path: string;
 }) {
   return (
-    <Route {...rest} element={true ? <Component /> : <Navigate to='/home' />} />
+    <Route
+      path={path}
+      element={true ? <Component /> : <Navigate to='/home' />}
+      {...rest}
+    />
   );
 }
