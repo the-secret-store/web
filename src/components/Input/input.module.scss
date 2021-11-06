@@ -1,0 +1,25 @@
+.input {
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    margin-left: 0.2rem;
+    font: inherit;
+    font-size: 0.9em;
+  }
+
+  input {
+    border: none;
+    min-width: 35rem;
+    border: 0.2rem solid var(--color-lavender);
+    border-radius: var(--ui-radius);
+    font: inherit;
+    color: currentColor;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--ui-glow);
+    }
+  }
+}
