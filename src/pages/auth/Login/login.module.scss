@@ -1,0 +1,24 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+
+.branding {
+  display: grid;
+  color: var(--color-lavender);
+  grid-template-columns: 1fr;
+  place-content: center;
+  place-items: center;
+  grid-gap: 1rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 200;
+  }
+
+  svg {
+    font-size: 6rem;
+  }
+}
