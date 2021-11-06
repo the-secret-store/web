@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font: inherit;
+  background-color: var(--color-lavender);
+  color: var(--color-dark-gray);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: var(--ui-radius);
+  padding: 1rem 2rem;
+
+  &:disabled {
+    background-color: darken(transparent, $amount: 0);
+  }
+}
