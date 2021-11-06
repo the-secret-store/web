@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from '../pages';
+import { Landing } from '../pages';
 
 export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Landing />} />
       </Routes>
     </BrowserRouter>
   );

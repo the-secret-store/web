@@ -1,8 +1,8 @@
 import { Icon } from '@iconify/react';
-import styles from './home.module.scss';
+import styles from './landing.module.scss';
 import { TextButton } from '../../components';
 
-export function Home() {
+export function Landing() {
   return (
     <>
       <nav className={styles.nav}>
