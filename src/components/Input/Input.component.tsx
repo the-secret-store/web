@@ -1,15 +1,18 @@
 import { Icon } from '@iconify/react';
 import { useTheme } from '@root';
+import crypto from 'crypto';
 import styles from './input.module.scss';
 
 export function Input({ icon, label, tip, ...props }: InputProps) {
   const { colors } = useTheme();
 
+  const inputId = props.id || props.name || crypto.randomBytes(16).toString('hex');
+
   return (
     <div className={styles.input}>
-      <label>{label}</label>
+      <label htmlFor={inputId}>{label}</label>
       {icon && <Icon icon={icon} />}
-      <input {...props} />
+      <input {...props} id={inputId} />
       <p
         className={styles.tip}
         style={
