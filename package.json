@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@iconify/react": "^3.0.1",
+    "formik": "^2.2.9",
     "module-alias": "^2.2.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
