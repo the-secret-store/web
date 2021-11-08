@@ -1,6 +1,5 @@
+import { Landing, Login, Register } from '@pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Landing, Register } from '../pages';
-import { Login } from '../pages/auth/Login';
 import { AuthRoute } from './routes';
 
 export function Router() {

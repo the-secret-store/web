@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from './root/Router';
-import { ThemeEngine } from './root/ThemeEngine';
+import { Router, ThemeEngine } from '@root';
 
 ReactDOM.render(
   <StrictMode>
