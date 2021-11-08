@@ -1,12 +1,12 @@
 import { Icon } from '@iconify/react';
 import { useTheme } from '@root';
-import crypto from 'crypto';
 import styles from './input.module.scss';
 
 export function Input({ icon, label, tip, ...props }: InputProps) {
   const { colors } = useTheme();
 
-  const inputId = props.id || props.name || crypto.randomBytes(16).toString('hex');
+  const inputId =
+    props.id || props.name || (Math.random() + 1).toString(36).substring(7);
 
   return (
     <div className={styles.input}>
