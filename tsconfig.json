@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components"],
+      "@constants": ["src/constants"],
       "@pages": ["src/pages"],
       "@utils": ["src/utils"],
       "@hooks": ["src/hooks"],
@@ -27,6 +28,7 @@
 
       // sub folders
       "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
       "@pages/*": ["src/pages/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],

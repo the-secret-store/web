@@ -1,25 +1,12 @@
 import { Button, Input } from '@components';
+import { initialValues, validationSchema } from './login.config';
 import { useFormik } from 'formik';
 import styles from './login.module.scss';
 
 export function LoginForm() {
   const formik = useFormik({
-    initialValues: {
-      email: '',
-      password: ''
-    },
-    validate: values => {
-      const errors: any = {};
-      if (!values.email) {
-        errors.email = 'Required';
-      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-        errors.email = 'Invalid email address';
-      }
-      if (!values.password) {
-        errors.password = 'Required';
-      }
-      return errors;
-    },
+    initialValues,
+    validationSchema,
     onSubmit: values => {
       console.log(values);
     }
