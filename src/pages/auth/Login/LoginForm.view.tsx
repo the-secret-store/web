@@ -43,7 +43,7 @@ export function LoginForm() {
         value={formik.values.password}
         tip={formik.touched.password ? formik.errors.password : ''}
       />
-      <Button onClick={formik.submitForm} label='Login' />
+      <Button type='submit' label='Login' />
     </form>
   );
 }
