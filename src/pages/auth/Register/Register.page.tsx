@@ -1,7 +1,7 @@
+import { CenterContainer } from '@components';
 import { Icon } from '@iconify/react';
-import { CenterContainer } from '../../../components';
-import { RegistrationForm } from './RegistrationForm.view';
 import styles from './register.module.scss';
+import { RegistrationForm } from './RegistrationForm.view';
 
 export function Register() {
   return (

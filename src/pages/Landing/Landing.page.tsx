@@ -1,6 +1,6 @@
+import { TextButton } from '@components';
 import { Icon } from '@iconify/react';
 import styles from './landing.module.scss';
-import { TextButton } from '../../components';
 
 export function Landing() {
   return (

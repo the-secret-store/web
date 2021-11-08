@@ -1,7 +1,7 @@
+import { CenterContainer } from '@components';
 import { Icon } from '@iconify/react';
-import { CenterContainer } from '../../../components';
-import { LoginForm } from './LoginForm.view';
 import styles from './login.module.scss';
+import { LoginForm } from './LoginForm.view';
 
 export function Login() {
   return (

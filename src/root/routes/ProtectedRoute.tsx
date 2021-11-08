@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, Route, useLocation } from 'react-router-dom';
 
 export function ProtectedRoute({

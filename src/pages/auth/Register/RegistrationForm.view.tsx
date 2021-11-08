@@ -1,4 +1,4 @@
-import { Button, Input } from '../../../components';
+import { Button, Input } from '@components';
 import styles from './register.module.scss';
 
 export function RegistrationForm() {
