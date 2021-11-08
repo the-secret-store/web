@@ -1,8 +1,8 @@
 import styles from './button.module.scss';
 
-export function Button({ label, onClick, disabled }: ButtonProps) {
+export function Button({ label, ...props }: ButtonProps) {
   return (
-    <button className={styles.button} onClick={onClick} disabled={disabled}>
+    <button className={styles.button} {...props}>
       {label}
     </button>
   );
