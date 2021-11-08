@@ -22,4 +22,11 @@
       box-shadow: var(--ui-glow);
     }
   }
+
+  .tip {
+    font-size: 0.8em;
+    margin: 0.3em;
+    color: var(--color-tomato);
+    min-height: 1em;
+  }
 }

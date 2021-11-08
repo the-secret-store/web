@@ -22,6 +22,7 @@ interface Theme {
       contrast: string;
     };
     error: string;
+    warning: string;
     success: string;
     info: string;
     darkGrey: string;
