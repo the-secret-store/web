@@ -8,8 +8,6 @@ export function Button({ label, onClick, disabled }: ButtonProps) {
   );
 }
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  onClick: () => void;
-  disabled?: boolean;
 }

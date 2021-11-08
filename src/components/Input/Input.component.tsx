@@ -24,7 +24,7 @@ export function Input({ icon, label, tip, ...props }: InputProps) {
   );
 }
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: string;
   label: string;
   type?: string;
