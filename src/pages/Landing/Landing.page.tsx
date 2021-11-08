@@ -7,7 +7,9 @@ export function Landing() {
     <>
       <nav className={styles.nav}>
         <ul>
-          <li>Sign in</li>
+          <li>
+            <TextButton link='/login'>Login</TextButton>{' '}
+          </li>
           <li>Report a bug</li>
           <li>About</li>
         </ul>
@@ -16,7 +18,7 @@ export function Landing() {
         <Icon icon='bi:shield-lock' />
         <h1>The Secret Store</h1>
         <p>
-          <TextButton link='/signup'>
+          <TextButton link='/register'>
             Create an account{' '}
             <Icon icon='akar-icons:arrow-right' className={styles.arrow} />
           </TextButton>

@@ -10,7 +10,7 @@ export function Register() {
         <Icon icon='bi:shield-lock' />
         <h1>The Secret Store</h1>
       </div>
-      <h2>Create a new account</h2>
+      <h2 className={styles.title}>Create a new account</h2>
       <RegistrationForm />
     </CenterContainer>
   );

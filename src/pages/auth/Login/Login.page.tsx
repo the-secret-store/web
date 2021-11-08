@@ -10,7 +10,7 @@ export function Login() {
         <Icon icon='bi:shield-lock' />
         <h1>The Secret Store</h1>
       </div>
-      <h2>Login</h2>
+      <h2 className={styles.title}>Login</h2>
       <LoginForm />
     </CenterContainer>
   );
