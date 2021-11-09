@@ -10,8 +10,10 @@ export function TextButton({ link, children }: TextButtonProps) {
 }
 
 interface TextButtonProps
-  extends React.ForwardRefExoticComponent<
-    LinkProps & React.RefAttributes<HTMLAnchorElement>
+  extends Partial<
+    React.ForwardRefExoticComponent<
+      LinkProps & React.RefAttributes<HTMLAnchorElement>
+    >
   > {
   children: React.ReactNode;
   link: string;
