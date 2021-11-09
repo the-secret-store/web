@@ -15,5 +15,6 @@ export default defineConfig({
       '@api': path.resolve(__dirname, 'src/api'),
       '@root': path.resolve(__dirname, 'src/root')
     }
-  }
+  },
+  publicDir: './public'
 });
