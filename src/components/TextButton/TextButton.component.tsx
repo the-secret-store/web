@@ -1,15 +1,18 @@
-import { ReactNode } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
 import styles from './textbutton.module.scss';
 
 export function TextButton({ link, children }: TextButtonProps) {
   return (
-    <a href={link} className={styles.text_button}>
+    <Link to={link} className={styles.text_button}>
       {children}
-    </a>
+    </Link>
   );
 }
 
-interface TextButtonProps {
-  children: ReactNode;
+interface TextButtonProps
+  extends React.ForwardRefExoticComponent<
+    LinkProps & React.RefAttributes<HTMLAnchorElement>
+  > {
+  children: React.ReactNode;
   link: string;
 }
