@@ -7,8 +7,11 @@ export function Router() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Landing />} />
-        <AuthRoute path='/login' element={<Login />} />
-        <AuthRoute path='/register' element={<Register />} />
+
+        <Route path='/auth'>
+          <AuthRoute path='login' element={<Login />} />
+          <AuthRoute path='register' element={<Register />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

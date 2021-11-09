@@ -8,7 +8,7 @@ export function Landing() {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <TextButton link='/login'>Login</TextButton>{' '}
+            <TextButton link='/auth/login'>Login</TextButton>{' '}
           </li>
           <li>Report a bug</li>
           <li>About</li>
@@ -18,7 +18,7 @@ export function Landing() {
         <Icon icon='bi:shield-lock' />
         <h1>The Secret Store</h1>
         <p>
-          <TextButton link='/register'>
+          <TextButton link='/auth/register'>
             Create an account{' '}
             <Icon icon='akar-icons:arrow-right' className={styles.arrow} />
           </TextButton>
