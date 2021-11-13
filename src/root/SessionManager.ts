@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import decodeJwt from 'jwt-decode';
 
 export type TokenPair = {
   authToken: string;
@@ -30,12 +30,11 @@ export class SessionManager {
   constructor(private store: Store = SessionManager.getStorage()) {}
 
   public isAuthorized(): boolean {
-    return !!this.store.tokens.authToken;
+    return !!this.store?.tokens?.authToken;
   }
 
   public setSession(tokens: TokenPair): void {
-    // !the typecasting could be a problem
-    const { display_name, id, email } = <Payload>jwt.decode(tokens.authToken);
+    const { display_name, id, email } = <Payload>decodeJwt(tokens.authToken);
     this.store = { tokens, displayName: display_name, id, email };
     SessionManager.setStorage(this.store);
   }
