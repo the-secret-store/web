@@ -1,7 +1,6 @@
-import { AuthApi } from '@api';
+import { ApiErrorResponse, AuthApi } from '@api';
 import session from '@root/config/session.instance';
 import { TokenPair } from '@root/SessionManager';
-import { AxiosError } from 'axios';
 import { ServiceResponse } from './ServiceResponse.interface';
 
 export class AuthService {
@@ -19,7 +18,26 @@ export class AuthService {
     } catch (error) {
       return {
         hasSucceeded: false,
-        message: (error as AxiosError).response?.data.message
+        message: (error as ApiErrorResponse).response?.data.message!
+      };
+    }
+  }
+
+  public async register(
+    display_name: string,
+    email: string,
+    password: string
+  ): Promise<ServiceResponse> {
+    try {
+      const message = await this.authApi.register({ display_name, email, password });
+      return {
+        hasSucceeded: true,
+        message
+      };
+    } catch (error) {
+      return {
+        hasSucceeded: false,
+        message: (error as ApiErrorResponse).response?.data.message!
       };
     }
   }

@@ -1,14 +1,32 @@
 import { Button, Input } from '@components';
+import { AuthService } from '@services';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router';
 import { initialValues, validationSchema } from './register.config';
 import styles from './register.module.scss';
 
 export function RegistrationForm() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: async values => {
+      const { display_name, email, password } = values;
+      const authService = new AuthService();
+      const { hasSucceeded, message } = await authService.register(
+        display_name,
+        email,
+        password
+      );
+
+      if (hasSucceeded) {
+        console.log(message);
+        navigate('/auth/login');
+      } else {
+        //todo: handle error
+        console.log(message);
+      }
     }
   });
 
