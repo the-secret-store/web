@@ -1,3 +1,5 @@
 import { SessionManager } from '@root/SessionManager';
 
-export default new SessionManager();
+const session = new SessionManager();
+
+export default session;
