@@ -1,14 +1,27 @@
 import { Button, Input } from '@components';
-import { initialValues, validationSchema } from './login.config';
+import { AuthService } from '@services';
 import { useFormik } from 'formik';
+import { initialValues, validationSchema } from './login.config';
 import styles from './login.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 export function LoginForm() {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: async values => {
+      const { email, password } = values;
+      const authService = new AuthService();
+      const { hasSucceeded, message } = await authService.login(email, password);
+      if (hasSucceeded) {
+        console.log(message);
+        navigate('/home');
+      } else {
+        // TODO: handle errors
+        console.log(message);
+      }
     }
   });
 
