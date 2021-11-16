@@ -22,6 +22,10 @@ type Payload = {
 export class SessionManager {
   private static readonly STORAGE_KEY = 'the-secret-store';
 
+  public static getStorageKey() {
+    return SessionManager.STORAGE_KEY;
+  }
+
   private static readonly getStorage = (): Store =>
     JSON.parse(window.localStorage.getItem(SessionManager.STORAGE_KEY) || '{}');
 
