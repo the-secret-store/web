@@ -1,6 +1,5 @@
 import { ApiErrorResponse, AuthApi } from '@api';
-import session from '@root/config/session.instance';
-import { TokenPair } from '@root/SessionManager';
+import { SessionManager, TokenPair } from '@root/AuthEngine/SessionManager';
 import { ServiceResponse } from './ServiceResponse.interface';
 
 export class AuthService {
@@ -9,7 +8,7 @@ export class AuthService {
   public async login(email: string, password: string): Promise<ServiceResponse> {
     try {
       const tokens: TokenPair = await this.authApi.login({ email, password });
-      session.setSession(tokens);
+      new SessionManager().setSession(tokens);
 
       return {
         hasSucceeded: true,
