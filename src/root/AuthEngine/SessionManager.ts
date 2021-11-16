@@ -10,6 +10,7 @@ type Store = {
   tokens: TokenPair;
   id: string;
   email: string;
+  verificationStatus: 'verified' | 'unverified';
 };
 
 type Payload = {
@@ -38,9 +39,21 @@ export class SessionManager {
     return !!this.store?.tokens?.authToken;
   }
 
+  public isVerified(): boolean {
+    return this.store.verificationStatus === 'verified';
+  }
+
   public setSession(tokens: TokenPair): void {
-    const { display_name, id, email } = <Payload>decodeJwt(tokens.authToken);
-    this.store = { tokens, displayName: display_name, id, email };
+    const { display_name, id, email, unverified } = <Payload>(
+      decodeJwt(tokens.authToken)
+    );
+    this.store = {
+      tokens,
+      displayName: display_name,
+      id,
+      email,
+      verificationStatus: unverified ? 'unverified' : 'verified'
+    };
     SessionManager.setStorage(this.store);
   }
 
