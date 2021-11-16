@@ -1,12 +1,15 @@
 import { Button, Input } from '@components';
+import { useAuthApi } from '@root/AuthEngine';
+import { SessionManager } from '@root/AuthEngine/SessionManager';
 import { AuthService } from '@services';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import { initialValues, validationSchema } from './login.config';
 import styles from './login.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 export function LoginForm() {
   const navigate = useNavigate();
+  const { setSession } = useAuthApi();
 
   const formik = useFormik({
     initialValues,
@@ -17,6 +20,9 @@ export function LoginForm() {
       const { hasSucceeded, message } = await authService.login(email, password);
       if (hasSucceeded) {
         console.log(message);
+        // update the session instance in context
+        setSession(new SessionManager());
+
         navigate('/home');
       } else {
         // TODO: handle errors
