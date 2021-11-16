@@ -34,7 +34,7 @@ export class SessionManager {
 
   constructor(private store: Store = SessionManager.getStorage()) {}
 
-  public isAuthorized(): boolean {
+  public isAuthenticated(): boolean {
     return !!this.store?.tokens?.authToken;
   }
 
