@@ -11,10 +11,16 @@ export function ProtectedRoute({
   element: any;
 }) {
   const { session } = useAuthApi();
-  const [authenticated, setAuthenticated] = useState(session.isAuthenticated());
+  const [{ authenticated, verified }, setAuthData] = useState({
+    authenticated: session.isAuthenticated(),
+    verified: session.isVerified()
+  });
 
   useEffect(() => {
-    setAuthenticated(session.isAuthenticated());
+    setAuthData({
+      authenticated: session.isAuthenticated(),
+      verified: session.isVerified()
+    });
   }, [session]);
 
   const redirect = useLocation().pathname;
@@ -23,9 +29,16 @@ export function ProtectedRoute({
       path={path}
       element={
         authenticated ? (
-          <Component />
+          verified ? (
+            // authenticated & verified
+            <Component />
+          ) : (
+            // authenticated but not verified
+            <Navigate to={`/auth/verify?redirect=${redirect}`} />
+          )
         ) : (
-          <Navigate to={`/login?redirect=${redirect}`} />
+          // not authenticated
+          <Navigate to={`/auth/login?redirect=${redirect}`} />
         )
       }
       {...rest}
