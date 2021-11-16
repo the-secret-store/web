@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { useTheme } from '@root';
+import { useTheme } from '@root/ThemeEngine';
 import styles from './input.module.scss';
 
 export function Input({ icon, label, tip, ...props }: InputProps) {

@@ -1,4 +1,4 @@
-import { useAuthApi } from '@root';
+import { useAuthApi } from '@root/AuthEngine';
 import { useEffect, useState } from 'react';
 import { Navigate, Route, useLocation } from 'react-router-dom';
 
