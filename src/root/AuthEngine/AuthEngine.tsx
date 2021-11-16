@@ -1,16 +1,23 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { SessionManager } from './SessionManager';
 
-const AuthContext = createContext([
-  new SessionManager(),
-  (newSession: SessionManager) => newSession
-]);
+const AuthContext = createContext<AuthContextType>({
+  session: new SessionManager(),
+  setSession: () => console.warn('Not provided')
+});
+
+type AuthContextType = {
+  session: SessionManager;
+  setSession: (newSession: SessionManager) => void;
+};
 
 export const AuthProvider = AuthContext.Provider;
 export const useAuthApi = () => useContext(AuthContext);
 
 export function AuthEngine({ children, authValue }: AuthEngineProps) {
-  return <AuthProvider value={[authValue]}>{children}</AuthProvider>;
+  const [session, setSession] = useState(authValue);
+
+  return <AuthProvider value={{ session, setSession }}>{children}</AuthProvider>;
 }
 
 interface AuthEngineProps {

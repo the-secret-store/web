@@ -1,12 +1,15 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, ThemeEngine } from '@root';
+import { AuthEngine, Router, ThemeEngine } from '@root';
+import { SessionManager } from '@root/AuthEngine/SessionManager';
 
 ReactDOM.render(
   <StrictMode>
-    <ThemeEngine>
-      <Router />
-    </ThemeEngine>
+    <AuthEngine authValue={new SessionManager()}>
+      <ThemeEngine>
+        <Router />
+      </ThemeEngine>
+    </AuthEngine>
   </StrictMode>,
   document.getElementById('root')
 );

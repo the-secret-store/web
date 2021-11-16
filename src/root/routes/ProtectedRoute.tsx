@@ -1,3 +1,5 @@
+import { useAuthApi } from '@root';
+import { useEffect, useState } from 'react';
 import { Navigate, Route, useLocation } from 'react-router-dom';
 
 export function ProtectedRoute({
@@ -8,12 +10,23 @@ export function ProtectedRoute({
   path: string;
   element: any;
 }) {
+  const { session } = useAuthApi();
+  const [authenticated, setAuthenticated] = useState(session.isAuthenticated());
+
+  useEffect(() => {
+    setAuthenticated(session.isAuthenticated());
+  }, [session]);
+
   const redirect = useLocation().pathname;
   return (
     <Route
       path={path}
       element={
-        true ? <Component /> : <Navigate to={`/login?redirect=${redirect}`} />
+        authenticated ? (
+          <Component />
+        ) : (
+          <Navigate to={`/login?redirect=${redirect}`} />
+        )
       }
       {...rest}
     />
