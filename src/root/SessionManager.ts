@@ -16,6 +16,7 @@ type Payload = {
   display_name: string;
   id: string;
   email: string;
+  unverified?: boolean;
 };
 
 export class SessionManager {
