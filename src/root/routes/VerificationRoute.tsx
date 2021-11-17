@@ -1,29 +1,36 @@
-import { useQueryParams } from '@hooks';
 import { useAuthApi } from '@root/AuthEngine';
 import { useEffect, useState } from 'react';
 import { Navigate, Route } from 'react-router-dom';
+import { useQueryParams } from '@hooks';
 
-export function AuthRoute({
-  element: Component,
+export function VerificationRoute({
   path,
+  element: Component,
   ...rest
 }: {
-  element: any;
   path: string;
+  element: any;
 }) {
   const { session } = useAuthApi();
-  const query = useQueryParams();
-  const [authenticated, setAuthenticated] = useState(session.isAuthenticated());
+  const [{ authenticated, verified }, setAuthData] = useState({
+    authenticated: session.isAuthenticated(),
+    verified: session.isVerified()
+  });
 
   useEffect(() => {
-    setAuthenticated(session.isAuthenticated());
+    setAuthData({
+      authenticated: session.isAuthenticated(),
+      verified: session.isVerified()
+    });
   }, [session]);
+
+  const query = useQueryParams();
 
   return (
     <Route
       path={path}
       element={
-        !authenticated ? (
+        authenticated && !verified ? (
           <Component />
         ) : (
           <Navigate to={query.get('redirect') ?? '/home'} />
