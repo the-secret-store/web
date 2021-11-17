@@ -30,9 +30,10 @@
   },
   "_moduleAliases": {
     "@api": "./src/api",
-    "@dtos": "./src/dtos",
     "@components": "./src/components",
     "@constants": "./src/constants",
+    "@dtos": "./src/dtos",
+    "@hooks": "./src/hooks",
     "@pages": "./src/pages",
     "@root": "./src/root",
     "@services": "./src/services",
