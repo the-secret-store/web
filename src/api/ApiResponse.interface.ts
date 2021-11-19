@@ -1,4 +1,4 @@
-import { TokenPair } from '@root/SessionManager';
+import { TokenPair } from '@root/AuthEngine/SessionManager';
 import { AxiosError, AxiosResponse } from 'axios';
 
 export interface ApiResponse

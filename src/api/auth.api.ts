@@ -1,6 +1,6 @@
 import { LoginDto, RegisterDto } from '@dtos';
 import { instance } from '@root/config/axios.config';
-import { TokenPair } from '@root/SessionManager';
+import { TokenPair } from '@root/AuthEngine/SessionManager';
 import { ApiResponse } from './ApiResponse.interface';
 
 export class AuthApi {
