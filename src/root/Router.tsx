@@ -1,4 +1,4 @@
-import { Landing, Login, Register } from '@pages';
+import { Landing, Login, Register, Verify } from '@pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AuthRoute } from './routes';
 
@@ -11,6 +11,7 @@ export function Router() {
         <Route path='/auth'>
           <AuthRoute path='login' element={<Login />} />
           <AuthRoute path='register' element={<Register />} />
+          <AuthRoute path='verify' element={<Verify />} />
         </Route>
       </Routes>
     </BrowserRouter>
